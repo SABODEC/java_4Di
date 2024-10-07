@@ -1,0 +1,48 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class LampadinaGUI extends JFrame {
+    private JButton pulsante;
+    private JLabel lampadina;
+    private boolean accesa = false;
+
+    public LampadinaGUI() {
+        super("Simulatore Lampadina");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(200, 200);
+        setLayout(new BorderLayout());
+
+        pulsante = new JButton("Accendi/Spegni");
+        pulsante.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                accesa = !accesa;
+                aggiornaInterfaccia();
+            }
+        });
+
+        lampadina = new JLabel();
+        aggiornaInterfaccia();
+
+        add(pulsante, BorderLayout.SOUTH);
+        add(lampadina, BorderLayout.CENTER);
+
+        setVisible(true);
+    }
+
+    private void aggiornaInterfaccia() {
+        if (accesa) {
+            lampadina.setText("");
+            pulsante.setText("Spegni");
+        } else {
+            lampadina.setText("⚫");
+            pulsante.setText("Accendi");
+        }
+    }
+
+    public static void main(String[] args) {
+        new LampadinaGUI();
+    }
+}
