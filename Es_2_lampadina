@@ -1,0 +1,60 @@
+package org.example;
+
+import javax.swing.*;
+import javax.swing.border.Border;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Lampadina_Es_2 extends JFrame {
+    private JButton bottone_accensione;
+    private JLabel lampadina;
+    private JButton bottone_spegnimento;
+    private JButton Bottone_spegnimento2;
+    public void finestra() {
+       setTitle("Lampadina con due interruttori");
+        JFrame finestra = new JFrame();
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(1400,1000);
+        setLayout(new BorderLayout());
+        bottone_accensione = new JButton("Accendi");
+        bottone_accensione.setSize(30,30);
+        bottone_accensione.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                lampadina.setText("Lampadina accesa");
+            }
+        });
+        bottone_spegnimento = new JButton("Spegni");
+        bottone_spegnimento.setSize(30,30);
+        bottone_spegnimento.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                lampadina.setText("Lampadina Spenta");
+            }
+        });
+        Bottone_spegnimento2 = new JButton("Termina programma");
+        Bottone_spegnimento2.setSize(30,30);
+        Bottone_spegnimento2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+
+        lampadina = new JLabel();
+        add(lampadina,BorderLayout.CENTER);
+        add(bottone_accensione, BorderLayout.SOUTH);
+        add(bottone_spegnimento,BorderLayout.PAGE_START);
+        add(Bottone_spegnimento2, BorderLayout.EAST);
+        setVisible(true);
+    }
+
+    public static void  main(String[] args) {
+      Lampadina_Es_2 lamp = new Lampadina_Es_2();
+      lamp.finestra();
+
+    }
+
+
+}
