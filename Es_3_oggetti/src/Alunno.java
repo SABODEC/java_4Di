@@ -19,33 +19,62 @@ public class Alunno {
 	private String nome;
 	private String cognome;
 	
-	public String get_cognome() {
-		return this.cognome = set_cognome();	
+	public void InitParametri() {
+		primo_esercizio = 0;
+		secondo_esercizio=0;
+		lettera_es_1 = ' ';
+		lettera_es_2 = ' ';
+		esame_intermedio_1 = 0;
+		esame_intermedio_2 = 0;
+		esame_finale =0;
+		lettera_esame_inter_1 = ' ';
+		lettera_esame_inter_2 = ' ';
+		lettera_esame_finale = ' ';
+		perc_es_1 =0;
+		perc_es_2=0;
+		perc_es_inter_1=0;
+		perc_es_inter_2=0;
+		perc_es_finale = 0;
+		nome = "";
+		cognome = "";
 	}
-	public String set_cognome() {
+	public void input() {
+		System.out.println("Inserisci il nome:");
+		this.nome = sc.next();
 		System.out.println("Inserisci il cognome:");
 		this.cognome = sc.next();
+		System.out.println("Inserisci il punteggio del primo esercizio:");
+		this.primo_esercizio = sc.nextDouble();
+		System.out.println("Inserisci il punteggio del secondo esercizio:");
+		this.secondo_esercizio = sc.nextDouble();
+		System.out.println("Inserisci il punteggio dell'esame intermedio 1:");
+		this.esame_intermedio_1 = sc.nextDouble();
+		System.out.println("Inserisci il punteggio dell'esame intermedio 2:");
+		this.esame_intermedio_2 = sc.nextDouble();
+		System.out.println("Inserisci il punteggio dell'esame finale:");
+		this.esame_finale = sc.nextDouble();
+	}
+	public String get_cognome() {
+		return set_cognome();	
+	}
+	public String set_cognome() {
 		return this.cognome;
 	}
 	public String get_nome() {
-		return this.nome = set_nome();
+		return set_nome();
 	}
 	public String set_nome() {
-		System.out.println("Inserisci il nome:");
-		this.nome = sc.next();
 		return this.nome;
 	}
 	public double get_primo_esercizio() {
-		return this.primo_esercizio = set_primo_esercizio();
+		return set_primo_esercizio();
 	}
 	public double set_primo_esercizio() {
-		System.out.println("Inserisci il punteggio del primo esercizio:");
-		this.primo_esercizio = sc.nextDouble();
 		this.perc_es_1 = (this.primo_esercizio/10)*100;
 		return this.perc_es_1;
 	}
 	public char get_lettera_es_1() {
-		return this.lettera_es_1 = set_lettera_es_1();
+		return set_lettera_es_1();
 	}
 	public char set_lettera_es_1() {
 		if(this.perc_es_1>90) {
@@ -71,16 +100,14 @@ public class Alunno {
 		return lettera_es_1;
 	}
 	public double get_secondo_esercizio() {
-		return this.secondo_esercizio = set_secondo_esercizio();
+		return  set_secondo_esercizio();	
 	}
 	public double set_secondo_esercizio() {
-		System.out.println("Inserisci il punteggio del secondo esercizio:");
-		this.secondo_esercizio = sc.nextDouble();
 		this.perc_es_2 = (this.secondo_esercizio/10)*100;
 		return this.perc_es_2;
 	}
 	public char get_lettera_es_2() {
-		return this.lettera_es_2 = set_lettera_es_2();
+		return set_lettera_es_2();
 	}
 	public char set_lettera_es_2() {
 		if(this.perc_es_2>90) {
@@ -106,16 +133,14 @@ public class Alunno {
 		return this.lettera_es_2;
 	}
 	public double get_esame_intermedio_1() {
-		return this.esame_intermedio_1 = set_esame_intermedio_1();
+		return set_esame_intermedio_1();
 	}
 	public double set_esame_intermedio_1() {
-		System.out.println("Inserisci il punteggio dell'esame intermedio 1:");
-		this.esame_intermedio_1 = sc.nextDouble();
 		this.perc_es_inter_1=(this.esame_intermedio_1/10)*100;
 		return this.perc_es_inter_1;
 	}
 	public char get_lettera_esame_inter_1() {
-		return this.lettera_esame_inter_1 = set_lettera_esame_inter_1();
+		return set_lettera_esame_inter_1();
 	}
 	public char set_lettera_esame_inter_1() {
 		if(this.perc_es_inter_1>90) {
@@ -141,11 +166,9 @@ public class Alunno {
 		return lettera_esame_inter_1;	
 	}
 	public double get_esame_intermedio_2() {
-		return this.esame_intermedio_2 = set_esame_intermedio_2();
+		return set_esame_intermedio_2();
 	}
 	public double set_esame_intermedio_2() {
-		System.out.println("Inserisci il punteggio dell'esame intermedio 2:");
-		this.esame_intermedio_2 = sc.nextDouble();
 		this.perc_es_inter_2=(this.esame_intermedio_2/10)*100;
 		return this.perc_es_inter_2;
 	}
@@ -176,16 +199,14 @@ public class Alunno {
 		return lettera_esame_inter_2;
 	}
 	public double get_esame_finale() {
-		return this.esame_finale = set_esame_finale();
+		return set_esame_finale();
 	}
 	public double set_esame_finale() {
-		System.out.println("Inserisci il punteggio dell'esame finale:");
-		this.esame_finale = sc.nextDouble();
 		this.perc_es_finale=(this.esame_finale/10)*100;
 		return this.perc_es_finale;
 	}
 	public char get_lettera_esame_finale() {
-		return this.lettera_esame_finale = set_lettera_esame_finale();
+		return set_lettera_esame_finale();
 	}
 	public char set_lettera_esame_finale() {
 		if(this.perc_es_finale>90) {
